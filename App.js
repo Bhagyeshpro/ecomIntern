@@ -1,13 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Navigation from './frontend/navigation/Navigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Ecom Intership app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <Navigation/>
+  )
 }
 
 const styles = StyleSheet.create({
