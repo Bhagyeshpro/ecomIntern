@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react'
 import {
   KeyboardAvoidingView,
@@ -40,10 +41,11 @@ const navigation = useNavigation();
     });
   };
   return (
-    <KeyboardAvoidingView style={styles.container} behavior={"padding"}>
+    <KeyboardAvoidingView style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"
+
           placeholderTextColor="#fff"
           // value={}
           onChangeText={(text) => setEmail(text)}

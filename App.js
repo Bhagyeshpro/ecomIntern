@@ -3,7 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import Navigation from './frontend/navigation/Navigation';
 
 export default function App() {
-  <Navigation/>
+  return (
+    <Navigation/>
+  )
 }
 
 const styles = StyleSheet.create({

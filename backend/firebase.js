@@ -9,8 +9,9 @@ const firebaseConfig = {
   projectId: "fir-auth-7aa6e",
   storageBucket: "fir-auth-7aa6e.appspot.com",
   messagingSenderId: "259071429255",
-  appId: "1:259071429255:web:fd879eb40467fa2c814622",
+  appId: "1:259071429255:web:16dca63c8acde8c0814622"
 };
+
 
 // Initialize Firebase
 
@@ -20,7 +21,6 @@ if (firebase.apps.length === 0) {
 } else {
   app = firebase.app();
 }
-
 const auth = firebase.auth();
 
 export { auth };
