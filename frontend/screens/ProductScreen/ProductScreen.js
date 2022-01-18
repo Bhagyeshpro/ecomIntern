@@ -1,16 +1,21 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import product from '../../../backend/products/data/Product'
 import QuantitySelector from '../../components/QuantitySelector/QuantitySelector'
 import Button from "../../components/Button/Button"
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel'
+import {useRoute} from "@react-navigation/native"
 
 const ProductScreen = () => {
     const [quantity, setQuantity] = useState(1)
+
+    const route = useRoute();
+    console.log(route.params);
    
     return (
-        <SafeAreaView style={styles.root} >
+        <ScrollView style={styles.root} >
+                <View>
             <Text style={styles.title}>{product.title}</Text>
             <ImageCarousel images={product.images}/>
             <View style={styles.priceContainer}>
@@ -22,8 +27,8 @@ const ProductScreen = () => {
 
             <Button text={"Add To Cart"} onPress={() => {console.log("Clicked on To Cart")}}/>
             <Button text={"Buy Now"} onPress={() => {console.log("Clicked on Buy")}}/>
-
-        </SafeAreaView>
+            </View>
+        </ScrollView>
     )
 }
 

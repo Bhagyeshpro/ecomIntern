@@ -1,9 +1,18 @@
 import React from 'react'
-import { StyleSheet,SafeAreaView, Image, Text, View } from 'react-native'
+import { StyleSheet,SafeAreaView, Image, Text, View, Pressable } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+
 
 const ProductItem = ({item}) => {
+    const navigation = useNavigation();
+
+    const onPress = () => {
+        console.warn("{ress");
+        navigation.navigate("ProductDetails", {id : item.id})
+    }
+
     return (
-        <SafeAreaView style={styles.container}>
+        <Pressable onPress={onPress} style={styles.container}>
             <View style={styles.root}>
                 <Image source={{uri: item.image}} style={styles.image}/>
                 <View style={styles.rightContainer}>
@@ -14,7 +23,7 @@ const ProductItem = ({item}) => {
                     </View>
                 </View>
             </View>
-        </SafeAreaView>
+        </Pressable>
     )
 }
 
