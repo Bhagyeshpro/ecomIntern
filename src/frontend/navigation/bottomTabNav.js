@@ -42,6 +42,7 @@ const bottomTabNav = () => {
                          backgroundColor: "#000"
                      },
                      headerTintColor: "#fff",
+                     
                    tabBarIcon: ({color}) => ( <Feather name="shopping-cart" color={color} size={20} />
                    ),
                }}
