@@ -25,6 +25,7 @@ export default [
     avgRating: 3.8,
     ratings: 2989,
     price: 4206.9,
+    oldPrice: 5333,
   },
   {
     id: '4',

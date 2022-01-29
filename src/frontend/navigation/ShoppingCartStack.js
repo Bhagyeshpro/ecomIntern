@@ -10,8 +10,15 @@ const Stack = createNativeStackNavigator();
 
 const ShoppingCartStack = () => {
     return (
-      <Stack.Navigator screenOptions={{headerShown: false}} >
-        <Stack.Screen component={ShoppingCartScreen}  name='ShoppingCartScreen' />
+      <Stack.Navigator screenOptions={{headerShown: true}} >
+        <Stack.Screen component={ShoppingCartScreen}  name='ShoppingCartScreen' 
+          options={{
+                   headerStyle: {
+                       backgroundColor: "#222e3c"
+                   },
+                   headerTintColor: "#fff",
+               }}
+        />
         <Stack.Screen component={AddressScreen} name='AddressScreen' />
       </Stack.Navigator>
 )

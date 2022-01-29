@@ -15,14 +15,11 @@ const bottomTabNav = () => {
         tabBarOptions={{
             showLabel: false,
         }}
+        screenOptions={{headerShown: false}}
        >
-           <Tab.Screen component=   {HomeStack} name='Home' 
-               options={{
-                   headerStyle: {
-                       backgroundColor: "#222e3c"
-                   },
-                   headerTintColor: "#fff",
-                   tabBarIcon: ({color}) => ( <Entypo name="home" color={color} size={20} />
+           <Tab.Screen component={HomeStack} name='Home' 
+                 options={{
+                   tabBarIcon: ({color}) => ( <FontAwesome name="home" color={color} size={20} />
                    ),
                }}
            />

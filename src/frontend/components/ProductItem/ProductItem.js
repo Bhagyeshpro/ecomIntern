@@ -6,9 +6,18 @@ import { useNavigation } from '@react-navigation/native'
 const ProductItem = ({item}) => {
     const navigation = useNavigation();
 
+    const {title} = item;
+    // console.log(title);
+
     const onPress = () => {
-        console.warn("{ress");
-        navigation.navigate("ProductDetails", {id : item.id})
+        console.warn("Press");
+        navigation.navigate("ProductDetails", {
+            title : item.title,
+            image : item.image,
+            price: item.price,
+            oldPrice: item.oldPrice,
+            id: item.id,
+        })
     }
 
     return (

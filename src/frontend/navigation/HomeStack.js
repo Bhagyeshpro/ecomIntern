@@ -9,10 +9,26 @@ const Stack = createNativeStackNavigator();
 
 const HomeStack = () => {
     return (
-      <Stack.Navigator screenOptions={{headerShown: false}} >
+      <Stack.Navigator screenOptions={{headerShown: true}} >
         <Stack.Screen
-         component={HomeScreen}  name='HomeScreen' />
-        <Stack.Screen component={ProductScreen} name='ProductDetails' />
+         component={HomeScreen}  name='HomeScreen' 
+              options={{
+                   headerStyle: {
+                       backgroundColor: "#222e3c"
+                   },
+                   headerTintColor: "#fff",
+                   tabBarIcon: ({color}) => ( <Entypo name="home" color={color} size={20} />
+                   ),
+               }}
+         />
+        <Stack.Screen component={ProductScreen} name='ProductDetails' 
+             options={{
+                   headerStyle: {
+                       backgroundColor: "#222e3c"
+                   },
+                   headerTintColor: "#fff",
+               }}
+        />
       </Stack.Navigator>
 )
   }
