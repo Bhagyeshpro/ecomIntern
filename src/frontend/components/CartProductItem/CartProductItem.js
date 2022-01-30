@@ -1,26 +1,38 @@
 import React, {useState} from 'react'
 import { StyleSheet,SafeAreaView, Image, Text, View } from 'react-native'
+import Button from '../Button/Button'
+import { useStateValue } from "../../../backend/StateProvider"
 
 import QuantitySelector from "../QuantitySelector/QuantitySelector"
 
-const CartProductItem = ({item}) => {
-    const [quantityIs, setQuantityIs] = useState(item.quantity);
+const CartProductItem = ({id, title, image, oldPrice, price}) => {
+    // const [quantityIs, setQuantityIs] = useState(item.quantity);
+    const [{basket}, dispatch] = useStateValue();
+
+    const removeFromBasket = () => {
+        dispatch({
+            type: "REMOVE_FROM_BASKET",
+            id: id,
+        })
+    }
 
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.root}>
-                <Image source={{uri: item.item.image}} style={styles.image}/>
+                <Image source={{uri: image}} style={styles.image}/>
                 <View style={styles.rightContainer}>
-                    <Text numberOfLines={3} style={styles.title}>{item.item.title}</Text>
+                    <Text numberOfLines={3} style={styles.title}>{title}</Text>
                     <View style={styles.priceContainer}>
-                    <Text style={styles.price}>from $ {item.item.price}</Text>
-                    <Text style={styles.oldPrice}>$ {item.item.oldPrice}</Text>
+                    <Text style={styles.price}>from $ {price}</Text>
+                    <Text style={styles.oldPrice}>$ {oldPrice}</Text>
                     </View>
+                    <Button onPress={removeFromBasket} text={"Remove From Cart"}/>
                 </View>
             </View>
-            <View style={styles.quantityContainer}>
+            {/* <View style={styles.quantityContainer}>
             <QuantitySelector quantity={quantityIs} setQuantity={setQuantityIs}/>
-            </View>
+            </View> */}
+
         </SafeAreaView>
     )
 }

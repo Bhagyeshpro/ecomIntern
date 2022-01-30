@@ -2,11 +2,12 @@ import React, {useState} from 'react'
 import { StyleSheet, KeyboardAvoidingView, ScrollView, Alert, Picker,TextInput, Text, View, Platform } from 'react-native'
 import countryList from "country-list"
 import Button from "../../components/Button/Button"
+import { useNavigation } from '@react-navigation/native'
 
 const countries = countryList.getData()
-// console.log(countries);
 
 const AddressScreen = () => {
+    const navigation = useNavigation()
     const [country, setCountry] = useState(countries[0].code)
     const [fullName, setFullName] = useState("")
     const [phone, setPhone] = useState('');
@@ -22,6 +23,7 @@ const AddressScreen = () => {
         if(!phone) {
             Alert.alert("Please fill correct Phone Number")
         }
+        navigation.navigate("OrderPlacedScreen")
     }
 
     console.log(country);
