@@ -6,6 +6,7 @@ import Button from "../../components/Button/Button"
 import products from "../../../backend/products/data/Cart"
 import { FontAwesome5 } from '@expo/vector-icons'
 import { useStateValue } from '../../../backend/StateProvider'
+import Subtotal from '../../components/Subtotal/Subtotal'
 
 const ShoppingCartScreen = () => {
     const navigation = useNavigation()
@@ -33,22 +34,21 @@ const ShoppingCartScreen = () => {
         0,
     );
 
-    const onCheckout = () => {
-        navigation.navigate("AddressScreen")
-    }
+    
 
     return (
         <SafeAreaView style={styles.container}>            
             {/* <Text>{[basket[0]]}</Text> */}
             {
                 basket?.length === 0 ? (
-                    <View>
+                    <View style={{marginLeft: 10}}>
                         <Text style={styles.heading}>Your Shopping basket is empty!</Text>
                         <Text style={styles.heading}>Check your Saved for later items below or go to Home</Text>
                     </View>
                 ): (
                     <View>
-                        <Text>Your Shopping Basket</Text>
+                        <Text style={{marginLeft: 10}}>Your Shopping Basket</Text>
+                        <Subtotal navigation={navigation}/>
                         {
                             basket?.map(item => (
 

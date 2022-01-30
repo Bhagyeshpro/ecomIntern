@@ -15,6 +15,7 @@ const bottomTabNav = () => {
         tabBarOptions={{
             showLabel: false,
         }}
+        initialRouteName='Home'
         screenOptions={{headerShown: false}}
        >
            <Tab.Screen component={HomeStack} name='Home' 
