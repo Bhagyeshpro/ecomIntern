@@ -34,6 +34,7 @@ const bottomTabNav = () => {
                    ),
                }}
            />
+           
            <Tab.Screen component={ShoppingCartStack} name='shoppingCart' 
                  options={{
                      headerStyle: {

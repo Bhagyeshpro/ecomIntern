@@ -18,7 +18,7 @@ const navigation = useNavigation();
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        navigation.replace("Home");
+        navigation.replace("HomeTabs");
       }
     });
     return unsubscribe;
@@ -37,7 +37,7 @@ const navigation = useNavigation();
   const handleLogIn = () => {
     auth.signInWithEmailAndPassword(email, password).then((userCredentials) => {
       const user = userCredentials.user;
-      console.log("Loged In With : ", user.email);
+      console.log("Logged In With : ", user.email);
     });
   };
   return (
